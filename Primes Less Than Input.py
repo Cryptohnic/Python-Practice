@@ -7,4 +7,4 @@ for i in range(3,n):
             f=True
             break
     if not f:p.append(i)
-print('List of prime numbers less than',p)
+print('List of prime numbers less than',str(n)+':',p)
