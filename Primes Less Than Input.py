@@ -1,6 +1,3 @@
-from turtle import end_fill
-
-
 plist=[1,2]
 n=int(input('What is your number?: '))
 if n==1:
