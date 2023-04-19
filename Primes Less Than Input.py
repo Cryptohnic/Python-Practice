@@ -1,12 +1,6 @@
-plist=[1,2]
+plist=[]
 n=int(input('What is your number?: '))
-if n==1:
-    print("There are no prime numbers less than 1")
-    exit()
-if n==2:
-    print(f'List of prime numbers less than {n}: {plist[0:1]}')
-    exit()
-for i in range(3,n):
+for i in range(2,n):
     prime=True
     for j in range(2,i):
         if i%j==0:
