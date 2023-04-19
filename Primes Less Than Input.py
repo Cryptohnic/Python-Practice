@@ -6,5 +6,5 @@ for i in range(2,n):
         if i%j==0:
             prime=False
             break
-    if prime:plist.append(i)
+    if prime: plist.append(i)
 print(f'List of prime numbers less than {n}: {plist}')
