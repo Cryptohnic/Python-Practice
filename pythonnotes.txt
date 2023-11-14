@@ -1,0 +1,61 @@
+__str__() returns a custom string for the object and is called when you try to cast it to a string or print it: str(object). Without one, 
+printing an object prints out the memory address of the object
+
+__getitem__(index) allows you to use indexing and will be called when you say object[index]
+
+__setitem__(index,value) allows you to use indexing for assignment. ex: object[index]=value
+
+__iter__() allows you to iterate over the object in the form: for element in object:
+here is an implementation of __iter__ that a list would use assuming you already have a __getitem__ method written
+
+def __iter__() -> object:
+    for i in range(self.size):
+        yield self[i]
+
+__eq__(object) calls this method when comparing the object using the == operator
+
+__ne__(object) calls this method when comparing the object using the != operator, usually written as: 
+
+return not self==object if there is already a __eq__() method written
+
+__init__() how you write a constructor for an object
+
+__name__ allows you to see if the program is being imported or run as a main file, if returns __main__, current file is being run, otherwise,
+the filename of the file that is accessing __name__ will be returned
+
+int/int always returns a float unless using int//int. Any float in a x//x operation still returns float
+int('4.0') -> ValueError
+'hello'/2 -> TypeError
+by default, print('example') the end is \n by default equivalent to print('example',end='\n')
+
+To call a method from another file, "import filename" and then call filename.methodname()
+When importing from another file, it will run all code in the other file not in a method during the import statement
+so you need to use if __name__=='__main__'
+
+Passing through a value into a method only passes through a copy of the value and changing this copy wont change the original
+unless the value is mutable like a list, dictionary, or set, then a reference is passed in and the original will be altered as well
+If you don't use the assignment operator =, the value inside an immutable variable cannot change
+If you initialize a variable before calling a method, it can be used in that method even 
+if it was created the below the creation of the method and not passed through as a parameter
+
+use the module unittests to write tests for your code. Here is an example:
+
+import unittest
+from assignment1 import is_prime
+
+class TestFirstAssignment(unittest.TestCase):
+    def test_is_prime_gives_correct_answer_for_N_equals_2(self):
+        self.assertTrue(is_prime(2))
+    
+    def test_is_prime_gives_correct_answer_for_N_equals_23(self):
+        self.assertFalse(is_prime(46))
+
+    def test_is_prime_gives_correct_answer_for_N_equals_46(self):
+        self.assertEqual(is_prime(23),True)
+
+# You have to make methods start with test_
+
+if __name__=='__main__':
+    unittest.main()
+
+Know LinkedLists/Nodes and information hiding, binary_search, bubble_sort, selection_sort, and merge_sort in python
