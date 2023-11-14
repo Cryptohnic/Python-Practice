@@ -1,3 +1,5 @@
+# O(N^2)
+
 def bubble_sort(list):
     drop_position=len(list)-1
     for _ in range(len(list)):
@@ -9,5 +11,3 @@ def bubble_sort(list):
 
 print(bubble_sort([2,3,1,10,1]))
 print(bubble_sort([2,3,1,10,1,9,11,12,1,1,1,10]))
-
-# O(N^2)
