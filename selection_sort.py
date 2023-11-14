@@ -1,8 +1,7 @@
 # Selection Sort O(N^2)
 
 def selection_sort(list):
-    back=len(list)-1
-    for selection_spot in range(back,0,-1):
+    for selection_spot in range(len(list)-1,0,-1):
         max_spot=selection_spot
         for i in range(0,selection_spot):
             if list[i]>list[max_spot]:
